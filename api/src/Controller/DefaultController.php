@@ -18,6 +18,6 @@ class DefaultController extends AbstractController
      */
     public function indexAction(Request $request, EntityManagerInterface $em)
     {
-        return [];
+        return ['people'=>[]];
     }
 }
