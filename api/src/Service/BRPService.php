@@ -27,7 +27,7 @@ class BRPService
 		$response = $this->client->request('GET','/ingeschrevenpersonen/');
 		
 		$response = json_decode($response->getBody(), true);
-		return $response['_embedded'];
+		return $response;
 	}
 	
 	public function getPersonOnBsn($bsn)

@@ -94,7 +94,7 @@
 								<h4>Fake <b>inloggen</b></h4>
 								<select name="ssoid">
 								  {% for persoon in people %}
-								  <option value="{{ persoon.burgerservicenummer  }}">{{ persoon.voornamen }} {{ persoon.geslachtsnaam }}</option>
+								  <option value="{{ persoon.burgerservicenummer  }}">{{ persoon.naam.voornamen }} {{ persoon.naam.geslachtsnaam }}</option>
 								  {% endfor %}
 								</select>
 								<input type="hidden" name="responce_url" value="{{ responceUrl }}">

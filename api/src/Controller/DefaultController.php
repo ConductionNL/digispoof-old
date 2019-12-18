@@ -23,8 +23,7 @@ class DefaultController extends AbstractController
     	$token = $request->query->get('token');
     	$responceUrl = $request->query->get('responceUrl');
     	$people = $BRPService->getAllPersons();
-    	
-    	
+    	    	
     	return ['people'=>$people, 'responceUrl' => $responceUrl, 'token' => $token];
     }
 }
