@@ -6,11 +6,16 @@ settings:
   registryBase: docker.io/conduction
   projectName: digispoof
   name: digispoof
-  title: Proto Applicatie
+  title: Digispoof
   version: V.0.1
   description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.&#039;'
   repro: 'https://github.com/ConductionNL/Proto-component-commonground'
-  domain: test.conduction.nl
+  domain: conduction.nl  
+  domains:
+    - conduction.nl
+    - zaakonline.nl
+    - huwelijksplanner.online
+    - common-ground.dev
   demo: test.conduction.nl
   unit: Common-Ground  
   locality: Amsterdam
