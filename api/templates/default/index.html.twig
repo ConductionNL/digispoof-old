@@ -92,7 +92,7 @@
 							<form class="intro-form" action="{{ responceUrl }}" method="post">
 							
 								<h4>Fake <b>inloggen</b></h4>
-								<select name="ssoid">
+								<select name="bsn">
 								  {% for persoon in people %}
 								  <option value="{{ persoon.burgerservicenummer  }}">{{ persoon.naam.voornamen }} {{ persoon.naam.geslachtsnaam }}</option>
 								  {% endfor %}
@@ -121,7 +121,7 @@
 			
 				<!-- FOOTER LOGO -->
 				<div class="col-sm-4 widget">
-					<div class="f-logo"><i class="fas fa-user-shield"></i> SingleSignOn</div>
+					<div class="f-logo"><i class="fas fa-user-shield"></i> Didispoof</div>
 					<p>Digispoof is een digitale oplossing van conduction voor het testen van Active Directory inlog systametiek zonder logius certificaten</p>
 					<div class="cinfo">
 						<p><i class="fa fa-map-marker"></i> Rubensstraat 50A,<br> 1077MT Amsterdam</p>

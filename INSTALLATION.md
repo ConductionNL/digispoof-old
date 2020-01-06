@@ -118,9 +118,9 @@ $ helm upgrade digispoof-prod ./api/helm --kubeconfig="api/helm/kubeconfig.yaml"
 
 Or del if you want to delete an existing  one
 ```CLI
-$ helm del digispoof-dev  --purge --kubeconfig="api/helm/kubeconfig.yaml --namespace=dev" 
-$ helm del digispoof-stag --purge --kubeconfig="api/helm/kubeconfig.yaml --namespace=stag" 
-$ helm del digispoof-prod --purge --kubeconfig="api/helm/kubeconfig.yaml --namespace=prod" 
+$ helm del digispoof-dev  --purge --kubeconfig="api/helm/kubeconfig.yaml" 
+$ helm del digispoof-stag --purge --kubeconfig="api/helm/kubeconfig.yaml"
+$ helm del digispoof-prod --purge --kubeconfig="api/helm/kubeconfig.yaml" 
 ```
 
 Note that you can replace common ground with the namespace that you want to use (normally the name of your component).
