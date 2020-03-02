@@ -10,14 +10,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+use App\Service\BRPService; 
+
 class DefaultController extends AbstractController
 {
     /**
      * @Route("/")
      * @Template
      */
-    public function indexAction(Request $request, EntityManagerInterface $em)
-    {
-        return ['people'=>[]];
+	public function indexAction(Request $request, BRPService $BRPService)
+    {    	
+    	$token = $request->query->get('token');
+    	$responceUrl = $request->query->get('responceUrl');
+    	$people = $BRPService->getAllPersons();
+    	    	
+    	return ['people'=>$people, 'responceUrl' => $responceUrl, 'token' => $token];
     }
 }
