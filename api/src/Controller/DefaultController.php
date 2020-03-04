@@ -22,7 +22,14 @@ class DefaultController extends AbstractController
     {    	
     	$token = $request->query->get('token');
     	$responceUrl = $request->query->get('responceUrl');
-    	$people = $commonGroundService->getResourceList('http://brp.huwelijksplanner.online/ingeschrevenpersonen');
+    	$brpUrl = $request->query->get('brpUrl');
+    	$url = $this->getRequest()->getHost();
+    	
+    	if(!$brpUrl){
+    		$brpUrl = str_replace(['ds','digispoof'].'.','brp.',$url);
+    	}
+    	
+    	$people = $commonGroundService->getResourceList($brpUrl.'/ingeschrevenpersonen');
     	    	
     	return ['people'=>$people, 'responceUrl' => $responceUrl, 'token' => $token];
     }
