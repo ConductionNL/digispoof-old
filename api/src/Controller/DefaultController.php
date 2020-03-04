@@ -18,18 +18,22 @@ class DefaultController extends AbstractController
      * @Route("/")
      * @Template
      */
-	public function indexAction(Request $request, CommonGroundService $commonGroundService)
+	public function viewAction(Request $request, CommonGroundService $commonGroundService)
     {    	
     	$token = $request->query->get('token');
     	$responceUrl = $request->query->get('responceUrl');
     	$brpUrl = $request->query->get('brpUrl');
-    	$url = $this->getRequest()->getHost();
+    	$url = $request->getHost();
     	
     	if(!$brpUrl){
     		$brpUrl = str_replace(['ds','digispoof'].'.','brp.',$url);
     	}
     	
+    	if($brpUrl == 'localhost'){
+    		$brpUrl = "https://brp.dev.huwelijksplanner.online";
+    	}
     	$people = $commonGroundService->getResourceList($brpUrl.'/ingeschrevenpersonen');
+    	
     	    	
     	return ['people'=>$people, 'responceUrl' => $responceUrl, 'token' => $token];
     }
